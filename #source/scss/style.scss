@@ -1,0 +1,23 @@
+// Обнуление
+@import 'reset';
+
+// Подключение шрифтов
+@import 'fonts';
+
+// Общие стили
+html{
+
+}
+
+body{
+
+}
+
+// Подключение общих блоков
+@import 'blocks';
+
+// Header
+@import 'header';
+
+// Footer
+@import 'footer';
