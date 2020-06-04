@@ -4,6 +4,17 @@
 // Подключение шрифтов
 @import 'fonts';
 
+// Миксины
+
+// Адаптивный шрифт 
+// Указать величину шрифта на минимальном экране и на макетном размере 
+$maxWidth: 1280; 
+@mixin adaptive-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
 // Общие стили
 html{
 
@@ -21,3 +32,4 @@ body{
 
 // Footer
 @import 'footer';
+
