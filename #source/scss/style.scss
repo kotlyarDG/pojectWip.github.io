@@ -8,7 +8,7 @@
 
 // Адаптивный шрифт 
 // Указать величину шрифта на минимальном экране и на макетном размере 
-$maxWidth: 1280; 
+$maxWidth: 1626; 
 @mixin adaptive-font($pcSize, $mobSize) {
 	$addSize: $pcSize - $mobSize;
 	$maxWidth: $maxWidth - 320;
@@ -21,8 +21,21 @@ html{
 }
 
 body{
-
+	font-family: 'Lato', sans-serif;
 }
+
+.wrapper{
+	overflow: hidden;
+	max-width: 100vw;
+}
+
+.container{
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+// IBG
+@import 'ibg';
 
 // Подключение общих блоков
 @import 'blocks';
@@ -33,3 +46,148 @@ body{
 // Footer
 @import 'footer';
 
+// main screen
+
+.main {
+
+	min-height: 100vh;
+	position: relative;
+	padding: 5px;
+	
+
+
+	&__slider {
+		padding: 200px 0 0 0;
+
+
+		
+		.slick-slider{
+
+		}
+
+		.slick-list {
+			overflow: hidden;
+			display: flex;
+			max-width: 30vw;
+
+			@media (max-width: 968px){
+				max-width: 50vw;
+			}
+			@media (max-width: 528px){
+				max-width: 90vw;
+			}
+		}
+
+		.slick-track{
+			display: flex;
+		}
+
+		.slick-slide{
+			flex: 0 0 30vw;
+			padding: 0 0 0 5px;
+			@media (max-width: 968px){
+				flex: 0 0 50vw;
+			}
+
+			@media (max-width: 528px){
+				flex: 0 0 90vw;
+			}
+		}
+
+		/* Точки (булиты) */
+		.slick-dots{
+			display: flex;
+			margin: 20px 0 0 0;
+
+		}
+
+		.slick-dots li{
+			list-style: none;
+			margin: 0 2.5px;
+
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+
+		.slick-dots button{
+			font-size: 0;
+			width: 16px;
+			height: 16px;
+			border: solid 2px rgba(0,0,0,0.55);
+			border-radius: 50%;
+			
+		}
+
+		/* Активная точка */
+		.slick-dots li.slick-active button{
+			background-color: rgba(0,0,0,0.55);
+			border: none;
+		}
+
+		@media (max-width: 968px){
+			position: relative;
+			z-index: 1;
+		}
+
+		
+	}
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		
+	}
+
+	&__tittle {
+		font-size: 32px;
+		line-height: 1.22;
+		
+
+		span{
+			font-weight: bold;
+  			color: #f06d6e;	
+		}
+	}
+
+	&__text {
+		margin: 44px 0 0 0;
+		line-height: 2;
+		color: #3d3d39;
+
+		@media (max-width: 968px) {
+			color: #000;
+			
+		}
+	}
+
+	&__btn {
+		margin: 49px 0 0 0;
+		line-height: 2;
+		color: #3d3d39;
+		padding: 20px 30px;
+		border: solid 1px #fac81b;
+		align-self: flex-start;
+		@media (max-width: 968px) {
+			color: #000;
+			
+		}
+	}
+
+	@media (max-width: 968px){
+		&:before{
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(150,150,150,0.6);
+			z-index: 0;
+		}
+	}
+}
+
+
+// main screen \
